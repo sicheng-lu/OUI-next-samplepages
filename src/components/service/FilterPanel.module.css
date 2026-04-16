@@ -1,0 +1,292 @@
+.panel {
+  width: 240px;
+  min-width: 240px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  overflow-y: auto;
+  box-sizing: border-box;
+  align-self: flex-start;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.panelTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.collapseIcon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+
+.collapseIcon:hover {
+  opacity: 1;
+}
+
+/* Collapsible section */
+.section {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.sectionHeader:hover {
+  background: #f8fafc;
+}
+
+.sectionLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.chevron {
+  width: 12px;
+  height: 12px;
+  color: #94a3b8;
+  transition: transform 0.2s ease;
+}
+
+.chevronExpanded {
+  transform: rotate(180deg);
+}
+
+.sectionContent {
+  padding: 4px 16px 12px;
+}
+
+/* Checkbox items */
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.checkboxItem input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #0284c7;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkboxLabel {
+  font-size: 13px;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+/* Range slider section */
+.rangeGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.rangeInputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rangeInput {
+  width: 100%;
+  flex: 1;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.rangeInput:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+.rangeSeparator {
+  font-size: 12px;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.rangeTrack {
+  position: relative;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  margin: 4px 0;
+}
+
+.rangeFill {
+  position: absolute;
+  height: 100%;
+  background: #0284c7;
+  border-radius: 2px;
+}
+
+.rangeHandle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border: 2px solid #0284c7;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.rangeText {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* Failure ratio legend */
+.legendList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.legendCheckbox {
+  width: 14px;
+  height: 14px;
+  accent-color: #0284c7;
+  cursor: pointer;
+  margin: 0;
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendDotBlue {
+  background-color: #3b82f6;
+}
+
+.legendDotOrange {
+  background-color: #f59e0b;
+}
+
+.legendDotRed {
+  background-color: #ef4444;
+}
+
+/* Attributes section */
+.attributesSubsection {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.attributesSubsectionChevron {
+  width: 10px;
+  height: 10px;
+  color: #94a3b8;
+  transition: transform 0.2s ease;
+}
+
+.attributesSubsectionChevronExpanded {
+  transform: rotate(90deg);
+}
+
+.attributeSearch {
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: inherit;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1e293b;
+  outline: none;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.attributeSearch:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+.attributeSearch::placeholder {
+  color: #94a3b8;
+}
+
+.attributeActions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.actionLink {
+  font-size: 12px;
+  color: #0284c7;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.actionLink:hover {
+  text-decoration: underline;
+}
