@@ -8,7 +8,7 @@ import ChatPage from './pages/ChatPage';
 const App = () => {
   return (
     <OuiProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/OUI-next-samplepages">
         <Routes>
           <Route element={<ApplicationShell />}>
             <Route path="/discover" element={<DiscoverPage />} />
