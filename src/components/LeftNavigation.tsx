@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { OuiIcon } from '../oui/icon';
 import styles from './LeftNavigation.module.css';
 
 export interface LeftNavigationProps {
@@ -18,18 +19,6 @@ export const NAV_ITEMS: NavItemConfig[] = [
   { label: 'Thread (wip)', path: '/chat', icon: 'chatApp' },
 ];
 
-/** Renders an OUI icon from public/icons/ as an img tag */
-const OuiIcon = ({ name, className, ariaLabel }: { name: string; className?: string; ariaLabel?: string }) => (
-  <img
-    src={`/icons/${name}.svg`}
-    alt={ariaLabel || ''}
-    aria-hidden={!ariaLabel}
-    className={className}
-    width="16"
-    height="16"
-  />
-);
-
 const LeftNavigation = ({ isOpen, onToggle }: LeftNavigationProps) => {
   const sidebarClass = `${styles.sidebar}${!isOpen ? ` ${styles.sidebarCollapsed}` : ''}`;
 
@@ -42,7 +31,7 @@ const LeftNavigation = ({ isOpen, onToggle }: LeftNavigationProps) => {
             <div className={styles.logo}>
               <img
                 className={styles.logoMark}
-                src="/opensearch_mark_on_light.svg"
+                src={`${import.meta.env.BASE_URL}opensearch_mark_on_light.svg`}
                 alt="OpenSearch logo"
               />
             </div>
@@ -52,14 +41,14 @@ const LeftNavigation = ({ isOpen, onToggle }: LeftNavigationProps) => {
               aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
               data-testid="collapse-toggle"
             >
-              <OuiIcon name="menuLeft" className={styles.bottomIconSvg} />
+              <OuiIcon type="menuLeft" className={styles.bottomIconSvg} />
             </button>
           </div>
 
           {/* Decorative search input */}
           <div className={styles.searchArea}>
             <div className={styles.searchInput} role="presentation" data-testid="nav-search-input">
-              <OuiIcon name="search" className={styles.searchIcon} />
+              <OuiIcon type="search" className={styles.searchIcon} />
               <span>Search the menu</span>
             </div>
           </div>
@@ -106,19 +95,19 @@ const LeftNavigation = ({ isOpen, onToggle }: LeftNavigationProps) => {
       <div className={styles.bottomBar} data-testid="bottom-icon-bar">
         <div className={styles.bottomBarIcons}>
           <button className={styles.bottomIcon} aria-label="Home">
-            <OuiIcon name="home" className={styles.bottomIconSvg} />
+            <OuiIcon type="home" className={styles.bottomIconSvg} />
           </button>
           <button className={styles.bottomIcon} aria-label="Workspace selector">
-            <OuiIcon name="apps" className={styles.bottomIconSvg} />
+            <OuiIcon type="apps" className={styles.bottomIconSvg} />
           </button>
           <button className={styles.bottomIcon} aria-label="Settings">
-            <OuiIcon name="gear" className={styles.bottomIconSvg} />
+            <OuiIcon type="gear" className={styles.bottomIconSvg} />
           </button>
           <button className={styles.bottomIcon} aria-label="Console">
-            <OuiIcon name="console" className={styles.bottomIconSvg} />
+            <OuiIcon type="console" className={styles.bottomIconSvg} />
           </button>
           <button className={styles.bottomIcon} aria-label="Help">
-            <OuiIcon name="question_in_circle" className={styles.bottomIconSvg} />
+            <OuiIcon type="questionInCircle" className={styles.bottomIconSvg} />
           </button>
           {/* Avatar */}
           <div className={styles.avatar} aria-label="User profile">OS</div>

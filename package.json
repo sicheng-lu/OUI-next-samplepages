@@ -13,7 +13,6 @@
   "dependencies": {
     "@opensearch-project/oui": "github:kamingleung/oui-next#v9-rework",
     "moment": "^2.30.1",
-    "oui-components": "npm:@opensearch-project/oui@^1.23.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.14.1"

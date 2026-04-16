@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { OuiIcon } from '../../oui/icon';
 import type { FilterState } from '../../data/sampleData';
 import { FAILURE_RATIO_LEGEND } from '../../data/sampleData';
 import styles from './FilterPanel.module.css';
@@ -111,12 +112,8 @@ const FilterPanel = ({ filters, onFilterChange }: FilterPanelProps) => {
       {/* Panel header */}
       <div className={styles.panelHeader}>
         <h2 className={styles.panelTitle}>Filters</h2>
-        <img
-          src="/icons/controls_horizontal.svg"
-          alt=""
-          aria-hidden="true"
-          width="16"
-          height="16"
+        <OuiIcon
+          type="controlsHorizontal"
           className={styles.collapseIcon}
         />
       </div>

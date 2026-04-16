@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { OuiIcon } from '../../oui/icon';
 import type { ServiceEntry, ServiceStatus } from '../../data/sampleData';
 import styles from './ServiceCatalog.module.css';
 
@@ -18,11 +19,6 @@ const STATUS_CLASS_MAP: Record<ServiceStatus, string> = {
   warning: styles.statusWarning,
   critical: styles.statusCritical,
 };
-
-const OuiIcon = ({ name, className }: { name: string; className?: string }) => (
-  <img src={`/icons/${name}.svg`} alt="" aria-hidden="true" className={className} width="16" height="16" />
-);
-
 
 const Sparkline = ({ data, color = '#94a3b8', width = 60, height = 20 }: {
   data: number[];
@@ -110,10 +106,10 @@ const ServiceCatalog = ({
   const renderSortIcon = (column: string) => {
     const isActive = sortColumn === column;
     if (isActive) {
-      const iconName = sortDirection === 'asc' ? 'sort_up' : 'sort_down';
-      return <img src={`/icons/${iconName}.svg`} alt="" aria-hidden="true" className={`${styles.sortIcon} ${styles.sortIconActive}`} width="12" height="12" />;
+      const iconType = sortDirection === 'asc' ? 'sortUp' : 'sortDown';
+      return <OuiIcon type={iconType} className={`${styles.sortIcon} ${styles.sortIconActive}`} size="s" />;
     }
-    return <img src="/icons/sortable.svg" alt="" aria-hidden="true" className={styles.sortIcon} width="12" height="12" />;
+    return <OuiIcon type="sortable" className={styles.sortIcon} size="s" />;
   };
 
 
@@ -157,21 +153,21 @@ const ServiceCatalog = ({
               onClick={() => onSort('latency')}
               data-testid="sort-latency"
             >
-              Avg. Latency ({activeLatencyTab}) <OuiIcon name="iInCircle" className={styles.infoIcon} /> {renderSortIcon('latency')}
+              Avg. Latency ({activeLatencyTab}) <OuiIcon type="iInCircle" className={styles.infoIcon} /> {renderSortIcon('latency')}
             </th>
             <th
               className={styles.sortableHeader}
               onClick={() => onSort('throughput')}
               data-testid="sort-throughput"
             >
-              Avg. throughput <OuiIcon name="iInCircle" className={styles.infoIcon} /> {renderSortIcon('throughput')}
+              Avg. throughput <OuiIcon type="iInCircle" className={styles.infoIcon} /> {renderSortIcon('throughput')}
             </th>
             <th
               className={styles.sortableHeader}
               onClick={() => onSort('failureRatio')}
               data-testid="sort-failure-ratio"
             >
-              Avg. failure ratio <OuiIcon name="iInCircle" className={styles.infoIcon} /> {renderSortIcon('failureRatio')}
+              Avg. failure ratio <OuiIcon type="iInCircle" className={styles.infoIcon} /> {renderSortIcon('failureRatio')}
             </th>
             <th
               className={styles.sortableHeader}
@@ -205,7 +201,7 @@ const ServiceCatalog = ({
                     disabled={!service.correlationsAvailable}
                     aria-label={`Filter for ${service.name}`}
                   >
-                    <OuiIcon name="filter" />
+                    <OuiIcon type="filter" />
                   </button>
                   <button
                     className={`${styles.correlationIcon} ${!service.correlationsAvailable ? styles.correlationIconDisabled : ''}`}
@@ -213,7 +209,7 @@ const ServiceCatalog = ({
                     disabled={!service.correlationsAvailable}
                     aria-label={`Document for ${service.name}`}
                   >
-                    <OuiIcon name="document" />
+                    <OuiIcon type="document" />
                   </button>
                   <button
                     className={`${styles.correlationIcon} ${!service.correlationsAvailable ? styles.correlationIconDisabled : ''}`}
@@ -221,7 +217,7 @@ const ServiceCatalog = ({
                     disabled={!service.correlationsAvailable}
                     aria-label={`Download for ${service.name}`}
                   >
-                    <OuiIcon name="download" />
+                    <OuiIcon type="download" />
                   </button>
                   <button
                     className={`${styles.correlationIcon} ${!service.correlationsAvailable ? styles.correlationIconDisabled : ''}`}
@@ -229,7 +225,7 @@ const ServiceCatalog = ({
                     disabled={!service.correlationsAvailable}
                     aria-label={`Stats for ${service.name}`}
                   >
-                    <OuiIcon name="stats" />
+                    <OuiIcon type="stats" />
                   </button>
                 </div>
               </td>

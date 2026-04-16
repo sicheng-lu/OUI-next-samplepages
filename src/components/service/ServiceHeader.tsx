@@ -1,3 +1,4 @@
+import { OuiIcon } from '../../oui/icon';
 import styles from './ServiceHeader.module.css';
 
 export interface ServiceHeaderProps {
@@ -5,21 +6,17 @@ export interface ServiceHeaderProps {
   onSearchChange: (value: string) => void;
 }
 
-const OuiIcon = ({ name, className }: { name: string; className?: string }) => (
-  <img src={`/icons/${name}.svg`} alt="" aria-hidden="true" className={className} width="16" height="16" />
-);
-
 const ServiceHeader = ({ searchValue, onSearchChange }: ServiceHeaderProps) => {
   return (
     <div className={styles.header} data-testid="service-header">
       <div className={styles.topRow}>
         <nav className={styles.breadcrumb} aria-label="Breadcrumb" data-testid="breadcrumb">
-          <OuiIcon name="gear" className={styles.breadcrumbIcon} />
+          <OuiIcon type="gear" className={styles.breadcrumbIcon} />
           <span className={styles.breadcrumbLink}>APM Observability</span>
           <span> / </span>
         </nav>
         <button className={styles.settingsButton} data-testid="apm-settings-button">
-          <OuiIcon name="gear" className={styles.settingsIcon} />
+          <OuiIcon type="gear" className={styles.settingsIcon} />
           APM Settings
         </button>
       </div>
@@ -30,7 +27,7 @@ const ServiceHeader = ({ searchValue, onSearchChange }: ServiceHeaderProps) => {
 
       <div className={styles.controlsRow}>
         <div className={styles.searchWrapper}>
-          <OuiIcon name="search" className={styles.searchInputIcon} />
+          <OuiIcon type="search" className={styles.searchInputIcon} />
           <input
             className={styles.searchInput}
             type="text"
@@ -42,7 +39,7 @@ const ServiceHeader = ({ searchValue, onSearchChange }: ServiceHeaderProps) => {
         </div>
 
         <div className={styles.datePickerRange} data-testid="time-range-selector">
-          <OuiIcon name="calendar" className={styles.calendarIcon} />
+          <OuiIcon type="calendar" className={styles.calendarIcon} />
           <span>Last 15 minutes</span>
           <a className={styles.showDatesLink} href="#" onClick={(e) => e.preventDefault()} data-testid="show-dates-link">
             Show dates
@@ -50,7 +47,7 @@ const ServiceHeader = ({ searchValue, onSearchChange }: ServiceHeaderProps) => {
         </div>
 
         <button className={styles.refreshButton} data-testid="refresh-button">
-          <img src="/icons/refresh.svg" alt="" aria-hidden="true" className={styles.refreshIcon} width="14" height="14" style={{ filter: 'brightness(0) invert(1)' }} />
+          <OuiIcon type="refresh" className={styles.refreshIcon} />
           Refresh
         </button>
       </div>

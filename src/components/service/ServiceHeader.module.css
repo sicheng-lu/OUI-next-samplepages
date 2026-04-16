@@ -171,17 +171,18 @@
   font-size: 14px;
   font-family: inherit;
   font-weight: 500;
-  color: #ffffff;
-  background: #0284c7;
-  border: none;
+  color: #0284c7;
+  background: none;
+  border: 1px solid #0284c7;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.15s ease;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .refreshButton:hover {
-  background: #0369a1;
+  background: rgba(2, 132, 199, 0.05);
 }
 
 .refreshIcon {
